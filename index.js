@@ -1,15 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+require('ignore-styles')
 
+require('@babel/register')({
+    ignore: [/(node_module)/],
+    presets: ['@babel/preset-env', '@babel/preset-react']
+})
 
-ReactDOM.hydrate(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-
-
+require('./server')
